@@ -1,0 +1,18 @@
+<%- include('partials/header');%>
+
+<h1><%= pageDefaultTitle %> </h1>
+<p><%= pageDefaultContent %> </p>
+
+    <% pageContent.forEach(post => { %>
+        <h1><%= post.title %> </h1>
+        <% post.content = post.content.slice(0,100);%> 
+        <p><%= post.content %> ... 
+            <% let url = "/posts/" + post.title %> 
+            
+            <a href= <%=url%>>read more</a>
+        </p>
+    <% }) %>
+
+<%- include('partials/footer');%> 
+
+
